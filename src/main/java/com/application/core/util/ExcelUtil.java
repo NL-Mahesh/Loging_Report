@@ -1,6 +1,5 @@
 package com.application.core.util;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,7 +22,7 @@ public class ExcelUtil {
 		String retValue=null;
 		try{			
 			//File file=new File("src/main/resources/testdata/",fileName);
-			FileInputStream in = new FileInputStream("src/main/resources/testdata/"+fileName);
+			FileInputStream in = new FileInputStream("src/test/resources/testdata/"+fileName);
 			wb=WorkbookFactory.create(in);
 			Sheet sh=wb.getSheet(strSheetName);
 			Row row=sh.getRow(rowNum);
