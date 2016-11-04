@@ -1,5 +1,6 @@
 package com.application.core.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,13 +15,15 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtil {
 	
-	private static Workbook wb=null;
-	static String file="testData.xlsx";
+	private static Workbook wb;
+	//static FileInputStream in=null;	
+	static String fileName="testdata.xlsx";
 	
 	public static String getExcelData(String strSheetName,int rowNum, int cellNum){
 		String retValue=null;
-		try{
-			FileInputStream in = new FileInputStream("src/main/resources/testdata/"+file);
+		try{			
+			//File file=new File("src/main/resources/testdata/",fileName);
+			FileInputStream in = new FileInputStream("src/main/resources/testdata/"+fileName);
 			wb=WorkbookFactory.create(in);
 			Sheet sh=wb.getSheet(strSheetName);
 			Row row=sh.getRow(rowNum);

@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class Properties {
 	
 	private static java.util.Properties props;
-	private static InputStream in=null;
+	private static FileInputStream in=null;
 	
 	static{
 		File fileName=new File("src/test/resources/applicaiton.properties");
